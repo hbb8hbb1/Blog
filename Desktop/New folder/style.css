@@ -1,0 +1,450 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('images/background.jpg'); /* ä½¿ç”¨ç›¸å¯¹è·¯å¾„ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* æ·»åŠ åŠé€æ˜ŽèƒŒæ™¯è‰²ï¼Œä»¥ä¾¿æ–‡å­—åœ¨èƒŒæ™¯å›¾ç‰‡ä¸Šå¯è§ */
+    color: white;
+    text-align: center;
+    padding: 1em 0 1em;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    --text-color: #FFFFFF;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    background: #333;
+    color: white;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.about {
+    text-align: left;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #333;
+    color: white;
+}
+
+/* Chat PDF Container */
+.chatpdf {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+
+/* Side Panel */
+.chatpdf .pannel {
+    width: 255px;
+    background-color: rgb(0, 21, 41);
+}
+
+@media (max-width: 768px) {
+    .pannel {
+        display: none;
+    }
+}
+
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    /* AI Insight + ChatGPT + 对话框文字一个颜色 + 光标的颜色都分开 + 对话内容字体 */
+    --text-color: #414034;
+    /* send + delete */
+    --icon-color: #ACACBE;
+    /* 点击delete框的背景颜色 */
+    --icon-hover-bg: #dcdcdc;
+    /* Enter对话框内部default字体颜色 */
+    --placeholder-color: #dcdcdc;
+    /*用户对话框 */
+    --outgoing-chat-bg: #FFFFFF;
+     /* Bot对话框背景 + 输入框（需要改） */
+    --incoming-chat-bg: #FFFFFF;
+    /* 用户对话框背景颜色 */
+    --outgoing-chat-border: #FFFFFF;
+     /* Bot对话框背景颜色 */
+    --incoming-chat-border: #D9D9E3;
+    /* delete 与 输入框中间的 */
+    --type-content-background-color: #7f7f7f;
+    /* bot回复下面的对话框颜色 */
+    /* --panel-color:#999999; */
+}
+
+/* 切换颜色darkmode */
+.light-mode {
+    /* AI Insight + ChatGPT + 对话框文字一个颜色 + 光标的颜色都分开 + 对话内容字体 */
+    --text-color: #ffffff;
+    /* send + delete */
+    --icon-color: #a9a9bc;
+    /* 靠近不点击delete框的背景颜色 */
+    --icon-hover-bg: #dcdcdc;
+    /*用户对话框 */
+    --placeholder-color: #dcdcdc;
+    /* Bot对话框背景 + 输入框（需要改） */
+    --outgoing-chat-bg: #FFFFFF;
+    /* 用户对话框背景颜色 */
+    --incoming-chat-bg: #FFFFFF;
+    /* Bot对话框背景颜色 */
+    --outgoing-chat-border: #FFFFFF;
+    /* Bot对话框背景颜色 */
+    --incoming-chat-border: #D9D9E3;
+    /* delete 与 输入框中间的 */
+    --type-content-background-color: #ffffff;
+    /* --panel-color:#ffffff; */
+}
+
+/* body {
+  background: var(--outgoing-chat-bg);
+}
+
+/* Chat Container */
+.chat-container {
+    overflow-y: auto;
+    padding-bottom: 150px;
+}
+
+:where(.chat-container, textarea)::-webkit-scrollbar {
+    width: 6px;
+}
+
+:where(.chat-container, textarea)::-webkit-scrollbar-track {
+    background: var(--incoming-chat-bg);
+    border-radius: 25px;
+}
+
+:where(.chat-container, textarea)::-webkit-scrollbar-thumb {
+    background: var(--icon-color);
+    border-radius: 25px;
+}
+
+
+/* 主页中间区域的字体 */
+.default-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+    padding: 0 10px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.default-text h1 {
+    font-size: 7.3rem;
+}
+
+.default-text p {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.chat-container .chat {
+    padding: 25px 10px;
+    display: flex;
+    justify-content: center;
+    color: var(--text-color);
+    
+}
+
+.chat-container .chat.outgoing {
+    background: var(--outgoing-chat-bg);
+    border: 1px solid var(--outgoing-chat-border);
+    
+}
+
+/* bot回复的聊天背景 */
+.chat-container .chat.incoming {
+    background: var(--incoming-chat-bg);
+    /* border: 1px solid var(--incoming-chat-border); */
+    
+    
+}
+
+.chat .chat-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+span.material-symbols-rounded {
+    user-select: none;
+    cursor: pointer;
+}
+
+.chat .chat-content span {
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--icon-color);
+    visibility: hidden;
+}
+
+.chat:hover .chat-content:not(:has(.typing-animation), :has(.error)) span {
+    visibility: visible;
+}
+
+.chat .chat-details {
+    display: flex;
+    align-items: center;
+}
+
+.chat .chat-details img {
+    width: 35px;
+    height: 35px;
+    align-self: flex-start;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* 用户与Bot对话框的字体调整 */
+.chat .chat-details p {
+    white-space: pre-wrap;
+    font-size: 1.25rem;
+    padding: 0 50px 0 25px;
+    color: rgb(0, 21, 41);
+    word-break: break-word;
+}
+
+.chat .chat-details p.error {
+    color: #bc0f3cbf;
+}
+
+.chat .typing-animation {
+    padding-left: 25px;
+    display: inline-flex;
+}
+
+.typing-animation .typing-dot {
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    margin: 0 3px;
+    opacity: 0.7;
+    background: var(--text-color);
+    animation: animateDots 1.5s var(--delay) ease-in-out infinite;
+}
+
+.typing-animation .typing-dot:first-child {
+    margin-left: 0;
+}
+
+@keyframes animateDots {
+    0%, 44% {
+        transform: translateY(0px);
+    }
+    28% {
+        opacity: 0.4;
+        transform: translateY(-6px);
+    }
+    44% {
+        opacity: 0.2;
+    }
+}
+
+/* Typing container styling */
+.typing-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 30px 20px;
+    justify-content: center;
+}
+
+.typing-container .typing-content {
+    display: flex;
+    max-width: 950px;
+    width: 100%;
+    align-items: flex-end;
+    /* background: var(--type-content-background-color); */
+}
+
+.typing-container .typing-textarea {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+/* Enter typing area 更改 */
+.typing-textarea textarea {
+    resize: none;
+    height: 65px;
+    width: 200%;
+    border: none;
+    padding: 20px 45px 15px 20px;
+    /* color: var(--text-color); */
+    font-size: 1rem;
+    max-height: 250px;
+    overflow-y: auto;
+    background: var(--incoming-chat-bg);
+    outline: 1px solid var(--incoming-chat-border);
+    border-radius: 15px;
+}
+
+.typing-textarea textarea::placeholder {
+    color: var(--placeholder-color);
+}
+
+/* Send */
+.typing-content span {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color);
+    border-radius: 20%;
+}
+
+.typing-textarea span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+
+.typing-textarea textarea:valid ~ span {
+    visibility: visible;
+}
+
+.typing-controls {
+    display: flex;
+}
+
+
+/* Delete 字体 */
+.typing-controls span {
+    margin-left: 7px;
+    font-size: 1.15rem;
+    background: var(--incoming-chat-bg);
+    outline: 1px solid var(--incoming-chat-border);
+}
+
+.typing-controls span:hover {
+    background: var(--icon-hover-bg);
+}
+
+/* Reponsive Media Query */
+@media screen and (max-width: 600px) {
+    .default-text h1 {
+        font-size: 2.3rem;
+    }
+
+    :where(.default-text p, textarea, .chat p) {
+        font-size: 0.95rem !important;
+    }
+
+    .chat-container .chat {
+        padding: 20px 10px;
+    }
+
+    .chat-container .chat img {
+        height: 32px;
+        width: 32px;
+    }
+
+    .chat-container .chat p {
+        padding: 0 20px;
+    }
+
+    .chat .chat-content:not(:has(.typing-animation), :has(.error)) span {
+        visibility: visible;
+    }
+
+    .typing-container {
+        padding: 15px 10px;
+    }
+
+    .typing-textarea textarea {
+        height: 45px;
+        padding: 10px 40px 10px 10px;
+    }
+
+    .typing-content span {
+        height: 45px;
+        width: 45px;
+        margin-left: 5px;
+    }
+
+    span.material-symbols-rounded {
+        font-size: 1.25rem !important;
+    }
+}
+
+.chat-container.chat-panel {
+    background: var(--panel-color);
+    height: 60vh;
+    max-width: 65%;
+    margin: 20px auto;
+    opacity: 1;
+    border-radius: 16px 16px 16px 16px; /* 将四个角都设为圆润 */
+}
+#head_button{
+    cursor: grab;
+    user-select: none;
+    color: var(--text-color);
+}
